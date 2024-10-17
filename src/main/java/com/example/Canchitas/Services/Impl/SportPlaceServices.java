@@ -3,10 +3,12 @@ package com.example.Canchitas.Services.Impl;
 import com.example.Canchitas.Entities.SportPlace;
 import com.example.Canchitas.Repositores.SportPlaceRepository;
 import com.example.Canchitas.Services.SportPlaceService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class SportPlaceServices implements SportPlaceService {
     private final SportPlaceRepository sportPlaceRepository;
 
@@ -35,8 +37,8 @@ public class SportPlaceServices implements SportPlaceService {
     }
 
     @Override
-    public List<SportPlace> findByLocation(String location) throws Exception {
-        return sportPlaceRepository.findByLocation(location);
+    public List<SportPlace> findByCoordinates(String coordinates) throws Exception {
+        return sportPlaceRepository.findByCoordinates(coordinates);
     }
 
     @Override

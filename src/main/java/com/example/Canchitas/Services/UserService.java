@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface UserService extends CrudService<User> {
     User findByEmail(String email) throws Exception;
-    List<User> findByRole(String role) throws Exception;
+    List<User> findByTypeUser(String typeUser) throws Exception;
 
 
 

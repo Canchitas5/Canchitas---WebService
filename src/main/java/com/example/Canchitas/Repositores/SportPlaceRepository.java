@@ -8,6 +8,6 @@ import java.util.List;
 @Repository
 
 public interface SportPlaceRepository extends JpaRepository<SportPlace,Long> {
-    List<SportPlace> findByLocation(String location) throws Exception;
+    List<SportPlace> findByCoordinates(String coordinates) throws Exception;
     List<SportPlace> findByCompany_Id(Long Id) throws Exception;
 }

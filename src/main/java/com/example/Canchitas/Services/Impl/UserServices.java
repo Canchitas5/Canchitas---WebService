@@ -23,8 +23,8 @@ public class UserServices implements UserService {
         return usersRepository.findByEmail(email);
     }
     @Override
-    public List<User> findByRole(String role) throws Exception {
-        return usersRepository.findByRole(role);
+    public List<User> findByTypeUser(String typeUser) throws Exception {
+        return usersRepository.findByTypeUser(typeUser);
     }
 
     @Override

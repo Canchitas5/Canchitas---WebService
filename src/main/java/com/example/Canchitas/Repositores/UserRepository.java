@@ -9,5 +9,5 @@ import java.util.List;
 
 public interface UserRepository extends JpaRepository<User, Long> {
     User findByEmail(String email) throws Exception;
-    List<User> findByRole(String role) throws Exception;
+    List<User> findByTypeUser(String typeUser) throws Exception;
 }
