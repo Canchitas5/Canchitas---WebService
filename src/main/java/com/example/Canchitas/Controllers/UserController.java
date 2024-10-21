@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -40,9 +41,9 @@ public class UserController {
     @GetMapping(value = "/searchByEmail/{email}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<User> getByEmail(String email) {
         try {
-            User user = userService.findByEmail(email);
+            Optional<User> user = userService.findByEmail(email);
             if (user != null) {
-                return new ResponseEntity<>(user, HttpStatus.OK);
+                return new ResponseEntity<>(user.get(), HttpStatus.OK);
             } else {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }

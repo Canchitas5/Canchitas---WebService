@@ -19,7 +19,7 @@ public class UserServices implements UserService {
 
 
     @Override
-    public User findByEmail(String email) throws Exception {
+    public Optional<User> findByEmail(String email) throws Exception {
         return usersRepository.findByEmail(email);
     }
     @Override
