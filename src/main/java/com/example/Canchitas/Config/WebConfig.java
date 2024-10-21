@@ -5,11 +5,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-<<<<<<< HEAD
-
-=======
->>>>>>> c0614f1 (update)
-@Configuration
 @EnableWebMvc
 public class WebConfig implements WebMvcConfigurer {
 
@@ -20,8 +15,4 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addResourceHandler("/webjars/**")
                 .addResourceLocations("classpath:/META-INF/resources/webjars/");
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> c0614f1 (update)
