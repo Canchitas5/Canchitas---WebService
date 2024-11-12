@@ -50,17 +50,11 @@ public class SportPlaces {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    @PostMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<SportPlace> createplaces(@PathVariable("id") Long id,@RequestBody SportPlace places){
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<SportPlace> createplaces(@RequestBody SportPlace places){
         try {
-            Optional<Company> userCompany = companyServices.getById(id);
-            if(!userCompany.isPresent())
-                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-            else {
-                places.setCompany(userCompany.get());
-                SportPlace newplaces = sportPlacesService.save(places);
-                return ResponseEntity.status(HttpStatus.CREATED).body(newplaces);
-            }
+            SportPlace placesCreate = sportPlacesService.save(places);
+            return new ResponseEntity<>(placesCreate, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
