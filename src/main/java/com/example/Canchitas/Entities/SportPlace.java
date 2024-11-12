@@ -26,6 +26,15 @@ public class SportPlace {
     private String image;
     @Column(name = "description", nullable = false, columnDefinition = "LONGTEXT")
     private String description;
+    @Column(name = "address", nullable = false, columnDefinition = "LONGTEXT")
+    private String address;
+    @Column(name = "capacity", nullable = false)
+    private int capacity;
+    @Column(name = "place_size", nullable = false)
+    private int placeSize;
+    @Column(name = "sport_type", nullable = false)
+    private String sportType;
+
 
 
     @ManyToOne
