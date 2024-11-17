@@ -100,7 +100,7 @@ public class ReservationController {
 
     //FindBySportPlaceId
 
-    @GetMapping(value = "/{sportPlace_id}", produces = "application/json")
+    @GetMapping(value = "/sportPlace/{sportPlace_id}", produces = "application/json")
     public ResponseEntity<List<Reservation>> findBySportPlaceId(@PathVariable("sportPlace_id") Long sportPlace_id){
         try {
             List<Reservation> reservations = reservationService.findBySportPlace_Id(sportPlace_id);
@@ -114,7 +114,7 @@ public class ReservationController {
     }
 
     //FindReservationByUserId
-    @GetMapping(value = "/{person_id}", produces = "application/json")
+    @GetMapping(value = "/person/{person_id}", produces = "application/json")
     public ResponseEntity<List<Reservation>> findReservationByUserId(@PathVariable("person_id") Long person_id){
         try {
             List<Reservation> reservations = reservationService.findReservationByPersonId(person_id);
