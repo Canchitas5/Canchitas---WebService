@@ -34,7 +34,7 @@ public class ReviewController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    @GetMapping(value = "/{sportPlace_id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/sportPlace/{sportPlace_id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Reviews>> findByProduct_Id(@PathVariable("sportPlace_id") Long sportPlace_id) {
         try {
             List<Reviews> reviews = reviewService.findBySportPlace_Id(sportPlace_id);
@@ -47,7 +47,7 @@ public class ReviewController {
         }
     }
 
-    @GetMapping(value = "/{person_id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/person/{person_id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Reviews>> findReviewByUserId(@PathVariable("person_id") Long person_id) {
         try {
             List<Reviews> reviews = reviewService.findReviewByPersonId(person_id);

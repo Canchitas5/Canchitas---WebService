@@ -1,5 +1,6 @@
 package com.example.Canchitas.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,6 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Table(name = "reviews")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Reviews {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
