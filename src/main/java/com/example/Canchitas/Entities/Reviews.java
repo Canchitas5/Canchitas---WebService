@@ -23,10 +23,10 @@ public class Reviews {
     @Column(name = "score", nullable = false)
     private int score;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "person_id", nullable = false)
     private Person person;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "sport_place_id", nullable = false)
     private SportPlace sportPlace;
 }

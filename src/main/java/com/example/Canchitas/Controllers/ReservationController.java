@@ -55,8 +55,11 @@ public class ReservationController {
     //Create
 
     @PostMapping(consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Reservation> create(@RequestBody Reservation reservation){
+    public ResponseEntity<Reservation> create(@RequestBody Reservation reservation) {
         try {
+            if (reservation.getPerson() != null && (reservation.getPerson().getId() == null || reservation.getPerson().getId() == 0)) {
+                reservation.setPerson(null);
+            }
             Reservation reservationCreate = reservationService.save(reservation);
             if (reservationCreate != null)
                 return new ResponseEntity<>(reservationCreate, HttpStatus.CREATED);
@@ -66,6 +69,8 @@ public class ReservationController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+
 
     //Update
     @PutMapping(value = "/{id}", consumes = "application/json", produces = "application/json")

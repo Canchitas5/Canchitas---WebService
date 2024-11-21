@@ -35,7 +35,8 @@ public class SportPlace {
     private int placeSize;
     @Column(name = "sport_type", nullable = false)
     private String sportType;
-
+    @Column(name = "schedule", nullable = false)
+    private String schedule;
 
 
     @ManyToOne

@@ -36,7 +36,7 @@ public class Reservation {
 
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "person_id", nullable = false)
+    @JoinColumn(name = "person_id", nullable = true)
     private Person person;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "sportPlace_id", nullable = false)

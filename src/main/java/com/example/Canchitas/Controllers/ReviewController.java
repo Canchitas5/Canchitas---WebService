@@ -73,8 +73,8 @@ public class ReviewController {
     }
 
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Reviews> newReview(@RequestBody Reviews review) {
+    @PostMapping(consumes = "application/json", produces = "application/json")
+    public ResponseEntity<Reviews> create(@RequestBody Reviews review) {
         try {
             Reviews newReview = reviewService.save(review);
             if (newReview != null)
